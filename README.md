@@ -36,3 +36,17 @@ Three candidate architectures were trained and evaluated on stratified 5-fold cr
 ---
 
 ## 🛠️ Pipeline Architecture & Methodology
+### 1. Data Sanitation & Logical Constraints
+* Filtered out severe data anomalies, including records with unrealistic borrower ages ($>100$) or impossible employment lengths ($\ge \text{age} - 18$).
+
+### 2. Leakage-Free Preprocessing Architecture
+* **Numeric Features**: Imputed via median strategy and standardized using `StandardScaler`.
+* **Ordinal Features**: Mapped loan risk grades (`A` through `G`) preserving inherent ordinal hierarchy via `OrdinalEncoder`.
+* **Nominal Categorical Features**: Encoded via `OneHotEncoder(handle_unknown='ignore')` to handle unseen categories during inference safely.
+
+### 3. Comprehensive Risk Dashboard
+Integrated a custom evaluation framework (`evaluate()`) generating a 2x2 analytical dashboard:
+* **ROC Curve & Gini**: Tracks discrimination capacity across all operating cutoffs.
+* **Precision-Recall Curve**: Evaluates precision retention on the minority class under high-recall scenarios.
+* **KS Separation Plot**: Measures maximum vertical separation between cumulative good vs. bad distributions.
+* **Confusion Matrix**: Evaluates performance at the optimized decision threshold.
