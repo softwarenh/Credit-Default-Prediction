@@ -50,3 +50,6 @@ Integrated a custom evaluation framework (`evaluate()`) generating a 2x2 analyti
 * **Precision-Recall Curve**: Evaluates precision retention on the minority class under high-recall scenarios.
 * **KS Separation Plot**: Measures maximum vertical separation between cumulative good vs. bad distributions.
 * **Confusion Matrix**: Evaluates performance at the optimized decision threshold.
+
+### link to Data used:
+https://www.kaggle.com/datasets/laotse/credit-risk-dataset
