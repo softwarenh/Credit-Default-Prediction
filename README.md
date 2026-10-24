@@ -1,6 +1,6 @@
 # Credit Risk Scoring & Loan Default Prediction Engine
 
-An end-to-end, production-grade credit risk modeling pipeline designed to assess loan default probabilities, optimize risk-adjusted lending decisions, and deliver regulatory transparency. 
+Credit risk modeling pipeline designed to assess loan default probabilities, optimize risk-adjusted lending decisions, and deliver feature explainability. 
 
 Rather than treating credit risk purely as a binary classification problem, this framework mirrors real-world underwriting systems—integrating domain-specific data sanitation, leakage-free pipeline architectures, institutional evaluation metrics (**Gini Coefficient**, **Kolmogorov-Smirnov Statistic**, **PR-AUC**), and post-hoc model explainability via **SHAP**.
 
@@ -11,7 +11,7 @@ Rather than treating credit risk purely as a binary classification problem, this
 * **Achieved an ROC-AUC of 0.9536 and a KS Statistic of 0.7864** on out-of-sample test data by implementing a leakage-free preprocessing pipeline, handling class imbalance (~22% baseline default rate), and optimizing hyperparameters across candidate models using 5-fold cross-validation.
 * **Eliminated data leakage risks** by encapsulating feature scaling, median/constant imputations, and categorical encodings within isolated `scikit-learn` `Pipeline` and `ColumnTransformer` modules.
 * **Established decision threshold optimization** by shifting away from the naive $0.50$ cutoff to an empirical **$0.1911$ threshold** (derived via Youden’s J statistic), significantly boosting default recall without compromising precision.
-* **Ensured model explainability for regulatory compliance** by leveraging SHAP (SHapley Additive exPlanations) for both portfolio-wide global feature analysis and local individual risk audits (waterfall plots).
+* **Ensured model explainability** by leveraging SHAP (SHapley Additive exPlanations) for both portfolio-wide global feature analysis and local individual risk audits (waterfall plots).
 
 ---
 
